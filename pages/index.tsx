@@ -267,6 +267,7 @@ export default function Home() {
                     let isRedeemed = false
                     const tokenId = await RetreiveMyToken(account)
                     const imgId = await RetreiveImageId(tokenId)
+                    console.log(tokenId, imgId)
                     isRedeemed = await useRedeemed(tokenId)
 
                     if(! isRedeemed ) {
@@ -340,7 +341,7 @@ export default function Home() {
                             });
                             return
                           }
-
+                          console.log(mintNFT[idx])
                           slothState.mySloth.push(mintNFT[idx]) 
                         
                           const newNFTs = mintNFT.filter((sloth) => sloth.unique_token_id != mintNFT[idx].unique_token_id)
@@ -350,6 +351,10 @@ export default function Home() {
                           slothState.sloth?.id=="2" ? 
                           slothState.sloth_10Ks = newNFTs : 
                           slothState.sloth_1Ks = newNFTs
+                          console.log(slothState.sloth_1Ms)
+                          console.log(slothState.sloth_10Ks)
+                          console.log(slothState.sloth_1Ks)
+
                           slothState.resetModal();
                           router.replace({
                             pathname: router.pathname,
