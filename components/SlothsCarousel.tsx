@@ -46,11 +46,7 @@ export const SlothsCarousel = ({
               colorPrimary: "rgba(0, 0, 0, 0.6)",
             },
           }}
-        >{/*   filter Don't need
-          <Button type="primary" className=" border-gray-300">
-            filter
-          </Button>
-          */}
+        >
         </ConfigProvider>
       </div>
       <div className="w-full flex items-center">
@@ -71,9 +67,9 @@ export const SlothsCarousel = ({
             autoplaySpeed={3000}
             dots={false}
           >
-            {spliceIntoChunks(sloths, 3).map((chunk, i) => (
+            {spliceIntoChunks(sloths.sort(), 3).map((chunk, i) => (
               <div key={i}>
-                <div className="flex w-full justify-between">
+                <div className="flex w-full">
                   {chunk.map((sloth, idx) => (
                     <SlothsCard
                       sloth={sloth}

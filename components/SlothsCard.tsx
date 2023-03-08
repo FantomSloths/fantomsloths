@@ -14,8 +14,8 @@ export const SlothsCard = ({
 }) => {
   const [hovered, setHovered] = useState<boolean>(false);
   const {active} = useWeb3React();
-
   const slothState = useSloths();
+
   return (
     <>
       <div
@@ -41,6 +41,7 @@ export const SlothsCard = ({
               <Button
                 className="bg-[#1d1d1d80] mr-4 text-white backdrop-blur"
                 onClick={() => {
+                  console.log(sloth)
                   slothState.viewDummySloth(sloth);
                   Router.replace({
                     pathname: Router.pathname,

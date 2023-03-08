@@ -5,7 +5,6 @@ import FANTOM_NFT_ABI from "@/abis/FANTOM_NFT_ABI.json";
 export async function useRedeemed(tokenId : number | undefined) {
     let etherium = (window as any).ethereum;
     const provider = new ethers.providers.Web3Provider(etherium)
-    console.log(etherium.selectedAddress)
     let NFTcontractAddr = currentAddresses.FANTOM_NFT_CONTRACT_ADDR
 
     const Redeemsigner = provider.getSigner();
@@ -44,5 +43,25 @@ export async function RetreiveMyToken(account : string | undefined | null) {
             console.log(e);
         }
     }
+    return undefined
+}
+
+
+export async function RetreiveImageId(tokenId : number | undefined) {
+    let etherium = (window as any).ethereum;
+    const provider = new ethers.providers.Web3Provider(etherium)
+    let NFTcontractAddr = currentAddresses.FANTOM_NFT_CONTRACT_ADDR
+
+    const getOwnerSign = provider.getSigner();
+    const Stablincontract = new ethers.Contract(NFTcontractAddr, FANTOM_NFT_ABI.abi, getOwnerSign);
+
+
+    try{    
+        let txn = await Stablincontract.getTokenToImage(tokenId);
+        return txn
+        }
+        catch (e) {
+            console.log(e);
+        }
     return undefined
 }

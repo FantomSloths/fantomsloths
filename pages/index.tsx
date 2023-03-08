@@ -16,7 +16,7 @@ import {
 
 import { useWeb3React } from "@web3-react/core";
 import { useMinted } from "@/hooks/useMinted";
-import { RetreiveMyToken, useRedeemed } from "@/hooks/useRedeemed";
+import { RetreiveImageId, RetreiveMyToken, useRedeemed } from "@/hooks/useRedeemed";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -265,8 +265,8 @@ export default function Home() {
                   onClick={async () => {
                     
                     let isRedeemed = false
-                    
                     const tokenId = await RetreiveMyToken(account)
+                    const imgId = await RetreiveImageId(tokenId)
                     isRedeemed = await useRedeemed(tokenId)
 
                     if(! isRedeemed ) {
@@ -274,18 +274,21 @@ export default function Home() {
                       router.replace({ pathname: router.pathname });
                       return
                     }
-                    
-                    const NFTredeemed  = slothState.mySloth.pop()
-                    if(NFTredeemed?.amount==1000000) {
-                      slothState.sloth_1Ms.push(NFTredeemed)
+                    const redeemed = slothState.mySloth.filter((sloth) => sloth.unique_token_id == imgId).pop()
+                    console.log(redeemed)
+                    slothState.mySloth = slothState.mySloth.filter((sloth) => sloth.unique_token_id != imgId)
+                    console.log(slothState.mySloth)
+
+                    if(redeemed?.amount==1000000) {
+                      slothState.sloth_1Ms.push(redeemed)
                     }
-                    else if (NFTredeemed?.amount==10000) {
-                      slothState.sloth_10Ks.push(NFTredeemed)
+                    else if (redeemed?.amount==10000) {
+                      slothState.sloth_10Ks.push(redeemed)
                     }
-                    else if(NFTredeemed?.amount==1000){
-                      slothState.sloth_1Ks.push(NFTredeemed)
+                    else if(redeemed?.amount==1000){
+                      slothState.sloth_1Ks.push(redeemed)
                     }
-                    
+                  
                     slothState.resetModal();
                     router.replace({ pathname: router.pathname });
                   }}

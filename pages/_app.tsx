@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Denver Sloths on the Run</title>
+        <title>Fantom Sloths on the Run</title>
         <meta name="title" property="og:title" content="Sloths on the Run" />
         <meta name="description" content="Fantom Sloths 2023"/>
         <meta name="image" property="og:image" content="/sloth-logo_180x180.png" />
