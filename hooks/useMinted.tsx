@@ -13,7 +13,7 @@ export async function useMinted(sloth : Sloth){
     const USDCcontractAddr = currentAddresses.FANTOM_USDC_CONTRACT_ADDR
     let NFTcontractAddr = currentAddresses.FANTOM_NFT_CONTRACT_ADDR
 
-
+/*
     const Approvesigner = provider.getSigner();
     const USDCcontract = new ethers.Contract(USDCcontractAddr, FANTOM_USDC_ABI.abi, Approvesigner);
   
@@ -27,6 +27,7 @@ export async function useMinted(sloth : Sloth){
       console.log(e);   
       return false
     }	
+    */
     let price = 0
     if(sloth.amount==100) price = 0
     else if(sloth.amount==1000) price = 1

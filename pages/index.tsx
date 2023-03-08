@@ -16,6 +16,7 @@ import {
 
 import { useWeb3React } from "@web3-react/core";
 import { useMinted } from "@/hooks/useMinted";
+import { RetreiveMyToken, useRedeemed } from "@/hooks/useRedeemed";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -262,6 +263,31 @@ export default function Home() {
                 <Button
                   className="w-24 min-w-max text-sm bg-black h-8 my-4 text-white"
                   onClick={async () => {
+                    
+                    let isRedeemed = false
+                    
+                    const tokenId = await RetreiveMyToken(account)
+                    isRedeemed = await useRedeemed(tokenId)
+
+                    if(! isRedeemed ) {
+                      slothState.resetModal();
+                      router.replace({ pathname: router.pathname });
+                      return
+                    }
+                    
+                    const NFTredeemed  = slothState.mySloth.pop()
+                    if(NFTredeemed?.amount==1000000) {
+                      slothState.sloth_1Ms.push(NFTredeemed)
+                    }
+                    else if (NFTredeemed?.amount==10000) {
+                      slothState.sloth_10Ks.push(NFTredeemed)
+                    }
+                    else if(NFTredeemed?.amount==1000){
+                      slothState.sloth_1Ks.push(NFTredeemed)
+                    }
+                    
+                    slothState.resetModal();
+                    router.replace({ pathname: router.pathname });
                   }}
                 >
                   OK
