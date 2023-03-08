@@ -32,7 +32,7 @@ export const useSloths = create<SlothsStore>((set) => ({
       name: "dot_1M_jack", 
       id: "1", 
       prisoned: true, 
-      url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1M_jack.png?raw=true",
+      url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/dot_1M_jack.png?raw=true",
       amount : 1000000,
       unique_token_id : 0
     },
@@ -40,7 +40,7 @@ export const useSloths = create<SlothsStore>((set) => ({
       name: "dot_1M_robby", 
       id: "2", 
       prisoned: true, 
-      url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1M_robby.png?raw=true",
+      url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/dot_1M_robby.png?raw=true",
       amount : 1000000,
       unique_token_id : 1
 
@@ -50,7 +50,7 @@ export const useSloths = create<SlothsStore>((set) => ({
       name: "dot_1M_tony", 
       id: "3", 
       prisoned: true, 
-      url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1M_tony.png?raw=true",
+      url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/dot_1M_tony.png?raw=true",
       amount : 1000000,
       unique_token_id : 2
   },
@@ -60,7 +60,7 @@ export const useSloths = create<SlothsStore>((set) => ({
       name: "dot_10K_han", 
       id: "1", 
       prisoned: true,
-      url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_10K_han.png?raw=true",
+      url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/dot_10K_han.png?raw=true",
       amount : 10000,
       unique_token_id : 3
   },
@@ -68,7 +68,7 @@ export const useSloths = create<SlothsStore>((set) => ({
       name: "dot_10K_kyle", 
       id: "2", 
       prisoned: true,
-      url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_10K_kyle.png?raw=true" ,
+      url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/dot_10K_kyle.png?raw=true" ,
       amount : 10000,
       unique_token_id : 4
     },
@@ -78,7 +78,7 @@ export const useSloths = create<SlothsStore>((set) => ({
       name: "dot_1K_mike", 
       id: "1", 
       prisoned: true,
-      url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1K_mike.png?raw=true" ,
+      url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/dot_1K_mike.png?raw=true" ,
       amount : 1000,
       unique_token_id : 5
     },
@@ -86,7 +86,7 @@ export const useSloths = create<SlothsStore>((set) => ({
       name: "dot_1K_nick", 
       id: "2", 
       prisoned: true,
-      url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1K_nick.png?raw=true" ,
+      url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/dot_1K_nick.png?raw=true" ,
       amount : 1000,
       unique_token_id : 6
     },
@@ -95,9 +95,9 @@ export const useSloths = create<SlothsStore>((set) => ({
   ] as Sloth[],
   
   prisonedSloth: [
-    { name: "Bounty_1M", id: "1", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_1M.png?raw=true", amount : 1000000, unique_token_id : 10000},
-    { name: "Bounty_10K", id: "2", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_10K.png?raw=true", amount : 10000, unique_token_id : 10001},
-    { name: "Bounty_1K", id: "3", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_1K.png?raw=true", amount : 1000, unique_token_id : 10002 },
+    { name: "Bounty_1M", id: "1", prisoned: true,url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/Bounty_1M.png?raw=true", amount : 1000000, unique_token_id : 10000},
+    { name: "Bounty_10K", id: "2", prisoned: true,url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/Bounty_10K.png?raw=true", amount : 10000, unique_token_id : 10001},
+    { name: "Bounty_1K", id: "3", prisoned: true,url : "https://github.com/FantomSloths/fantomsloths/blob/main/public/Bounty_1K.png?raw=true", amount : 1000, unique_token_id : 10002 },
   ],
   sloth: undefined,
   modal: false,
