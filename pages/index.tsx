@@ -7,6 +7,7 @@ import Router, { useRouter } from "next/router";
 import { TransferModal } from "@/components/TransferModal";
 import { SlothsCarousel } from "@/components";
 import { useSloths } from "@/store/store";
+import ConnectButton from "@/components/ConnectButton";
 import {
   CheckCircleOutlined,
   CloseOutlined,
@@ -14,6 +15,7 @@ import {
 } from "@ant-design/icons";
 
 import { useWeb3React } from "@web3-react/core";
+import { useMinted } from "@/hooks/useMinted";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -294,6 +296,35 @@ export default function Home() {
                       className="w-full text-sm bg-black h-8 mb-2 text-white"
                       onClick={
                         async () =>  {
+                          const mintNFT = slothState.sloth?.id=="1" ? 
+                          slothState.sloth_1Ms : 
+                          slothState.sloth?.id=="2" ? 
+                          slothState.sloth_10Ks : 
+                          slothState.sloth_1Ks
+                          const idx = slothState.bounties
+
+                          const isMinted = await useMinted(mintNFT[idx])
+                          if(!isMinted) {
+                            slothState.resetModal();
+                            router.replace({
+                              pathname: router.pathname,
+                            });
+                            return
+                          }
+
+                          slothState.mySloth.push(mintNFT[idx]) 
+                        
+                          const newNFTs = mintNFT.filter((sloth) => sloth.unique_token_id != mintNFT[idx].unique_token_id)
+
+                          slothState.sloth?.id=="1" ? 
+                          slothState.sloth_1Ms = newNFTs : 
+                          slothState.sloth?.id=="2" ? 
+                          slothState.sloth_10Ks = newNFTs : 
+                          slothState.sloth_1Ks = newNFTs
+                          slothState.resetModal();
+                          router.replace({
+                            pathname: router.pathname,
+                          });
                         }}
                     >
                       YES, Jailbreak the Sloth!
@@ -322,6 +353,7 @@ export default function Home() {
           <div className=" font-bold text-xl flex items-center">
             Sloths on the Run
           </div>
+          <ConnectButton />
         </div>
         <div className="w-full mt-10 flex ">
           <div className="flex items-center w-full">

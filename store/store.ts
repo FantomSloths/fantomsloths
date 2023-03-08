@@ -33,14 +33,17 @@ export const useSloths = create<SlothsStore>((set) => ({
       id: "1", 
       prisoned: true, 
       url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1M_jack.png?raw=true",
-      amount : 1000000
+      amount : 1000000,
+      unique_token_id : 0
     },
     { 
       name: "dot_1M_robby", 
       id: "2", 
       prisoned: true, 
       url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1M_robby.png?raw=true",
-      amount : 1000000
+      amount : 1000000,
+      unique_token_id : 1
+
 
   },
     { 
@@ -48,7 +51,8 @@ export const useSloths = create<SlothsStore>((set) => ({
       id: "3", 
       prisoned: true, 
       url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1M_tony.png?raw=true",
-      amount : 1000000
+      amount : 1000000,
+      unique_token_id : 2
   },
   ],
   sloth_10Ks:[
@@ -57,14 +61,16 @@ export const useSloths = create<SlothsStore>((set) => ({
       id: "1", 
       prisoned: true,
       url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_10K_han.png?raw=true",
-      amount : 10000
+      amount : 10000,
+      unique_token_id : 3
   },
     { 
       name: "dot_10K_kyle", 
       id: "2", 
       prisoned: true,
       url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_10K_kyle.png?raw=true" ,
-      amount : 10000
+      amount : 10000,
+      unique_token_id : 4
     },
   ],
   sloth_1Ks:[
@@ -73,23 +79,25 @@ export const useSloths = create<SlothsStore>((set) => ({
       id: "1", 
       prisoned: true,
       url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1K_mike.png?raw=true" ,
-      amount : 1000
+      amount : 1000,
+      unique_token_id : 5
     },
     { 
       name: "dot_1K_nick", 
       id: "2", 
       prisoned: true,
       url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/dot_1K_nick.png?raw=true" ,
-      amount : 1000
+      amount : 1000,
+      unique_token_id : 6
     },
   ],
   mySloth: [
   ] as Sloth[],
   
   prisonedSloth: [
-    { name: "Bounty_1M", id: "1", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_1M.png?raw=true",amount : 1000000 },
-    { name: "Bounty_10K", id: "2", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_10K.png?raw=true",amount : 10000 },
-    { name: "Bounty_1K", id: "3", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_1K.png?raw=true",amount : 1000 },
+    { name: "Bounty_1M", id: "1", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_1M.png?raw=true", amount : 1000000, unique_token_id : 10000},
+    { name: "Bounty_10K", id: "2", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_10K.png?raw=true", amount : 10000, unique_token_id : 10001},
+    { name: "Bounty_1K", id: "3", prisoned: true,url : "https://github.com/SlothDenver/sloth-ts/blob/main/public/Bounty_1K.png?raw=true", amount : 1000, unique_token_id : 10002 },
   ],
   sloth: undefined,
   modal: false,

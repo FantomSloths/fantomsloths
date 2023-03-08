@@ -8,7 +8,8 @@ export type Sloth = {
   id: string;
   prisoned: boolean;
   url : string;
-  amount : number
+  amount : number;
+  unique_token_id : number;
 };
 export type SlothCarouselProps = {
   sloths: Sloth[];
